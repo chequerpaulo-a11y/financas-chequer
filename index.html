@@ -447,8 +447,14 @@ function toast(msg,tipo) {
 </script>
 
 <!-- Firebase Compat SDK (funciona com onclick no HTML) -->
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
-<script>initApp();</script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js" onload="checkFirebase()"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js" onload="checkFirebase()"></script>
+<script>
+var _fbLoaded = 0;
+function checkFirebase() {
+  _fbLoaded++;
+  if (_fbLoaded >= 2) initApp();
+}
+</script>
 </body>
 </html>
