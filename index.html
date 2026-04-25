@@ -296,7 +296,7 @@ function renderLanc() {
     '<div class="item-l"><span class="item-data">'+l.data.split('-').reverse().join('/')+'</span>' +
     '<div><div class="item-cat">'+l.categoria+'</div>'+(l.descricao?'<div class="item-desc">'+l.descricao+'</div>':'')+'</div></div>' +
     '<div class="item-r"><span class="item-val '+l.tipo+'">'+(l.tipo==='receita'?'+':'-')+' '+fmt(l.valor)+'</span>' +
-    (l.id?'<button class="btn-del" onclick="delLanc(''+l.id+'')">&#10005;</button>':'')+'</div></div>'
+    (l.id?'<button class="btn-del" onclick="delLanc(\"'+l.id+'\")">&#10005;</button>':'')+'</div></div>'
   ).join('');
 }
 
